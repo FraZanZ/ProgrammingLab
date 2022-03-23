@@ -28,5 +28,5 @@ class CSVFile():
 #  Main del programma
 #==============================
 # srtampo a video
-# csv_file = CSVFile('shampoo_sales.csv')
-# print(csv_file.get_data())
+csv_file = CSVFile('shampoo_sales.csv')
+print(csv_file.get_data())
