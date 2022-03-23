@@ -4,7 +4,7 @@ def sum_list(the_list):
     else:
         total = 0
         for element in the_list:
-            total += element
+            total+=element
         return total
 
 
@@ -25,8 +25,9 @@ def sum_csv(file_name):
            date  = elements[0]        
            value = elements[1]        
 # Aggiungo alla lista dei valori questo valore         
-           values.append(value)
-        my_file.close()
-        return sum_list(values)
+           values.append(float(value))
+    my_file.close()
+    
+    return sum_list(values)
 #Provo
 print(sum_csv('shampoo_sales.csv'))
