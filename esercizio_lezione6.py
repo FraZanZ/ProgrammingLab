@@ -8,8 +8,19 @@ class CSVFile:
         
         # Setto il nome del file
         self.name = name
-        
-        
+        #
+        print(type(self.name))
+        # verifico eventuali anomalie nel nome del file
+        #1. caso in cui il nome file non sia una stringa
+        if not isinstance(self.name,str):
+            raise Exception('Il nome file non è una stringa! il tipo è: ',format(type(self.name)))
+            return None
+        #2. caso in cui ci siano degli spazi bianchi dopo l'estensione del file
+        nomefile    
+
+
+
+            
         # Provo ad aprirlo e leggere una riga
         self.can_read = True
         try:
@@ -71,10 +82,10 @@ class CSVFile:
 
 class NumericalCSVFile(CSVFile):
     
-    def get_data(self):
+    def get_data(self,*args,**kwargs):
         
         # Chiamo la get_data del genitore 
-        string_data = super().get_data()
+        string_data = super().get_data(*args,**kwargs)
         
         # Preparo lista per contenere i dati ma in formato numerico
         numerical_data = []
@@ -118,8 +129,9 @@ class NumericalCSVFile(CSVFile):
 #==============================
 #  Corpo del programma
 #==============================
-
-mio_file = CSVFile(name='shampoo_sales.csv')
+#nomefile = 'shampoo_sales.csv'
+nomefile = 3
+mio_file = CSVFile(name=nomefile)
 print('Nome del file: "{}"'.format(mio_file.name))
 print('Dati contenuti nel file: "{}"'.format(mio_file.get_data()))
 
